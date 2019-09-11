@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: #ffffff" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HouseHolderStageController">
+    <children>
+        <AnchorPane layoutX="0" layoutY="0" prefHeight="800.0" prefWidth="200.0" style="-fx-background-color: #252429">
+            <children>
+                <VBox layoutY="216.0" prefHeight="143.0" prefWidth="167.0" spacing="10.0">
+                    <children>
+                        <JFXButton onAction="#jumpToHolder" prefHeight="54.0" prefWidth="200.0" ripplerFill="#4059a9" style="-fx-text-fill: white" text="HouseHolder" />
+                        <JFXButton onAction="#jumpToRepair" prefHeight="50.0" prefWidth="200.0" ripplerFill="#4059a9" style="-fx-text-fill: white" text="Repair" />
+                    </children>
+                </VBox>
+            <ImageView fx:id="holderImgView" fitHeight="100.0" fitWidth="100.0" layoutX="50.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="holderNameLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="56.0" layoutY="149.0" prefHeight="32.0" prefWidth="88.0" underline="true" />
+            <ImageView fx:id="tab1Img" fitHeight="32.0" fitWidth="32.0" layoutX="170.0" layoutY="229.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="tab2Img" fitHeight="32.0" fitWidth="32.0" layoutX="170.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fx:id="exitImg" fitHeight="48.0" fitWidth="48.0" layoutX="76.0" layoutY="528.0" pickOnBounds="true" preserveRatio="true" />
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="200.0" prefHeight="800.0" prefWidth="950.0">
+            <children>
+                <JFXTabPane fx:id="contentTabPane" layoutX="7.0" layoutY="-36.0" prefHeight="750.0" prefWidth="950.0">
+                    <tabs>
+                        <Tab fx:id="holderTab" text="HouseHolder">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="750.0" prefWidth="950.0">
+                                    <children>
+                                        <AnchorPane layoutX="24.0" layoutY="408.0" prefHeight="291.0" prefWidth="323.0" style="-fx-border-color: #D5E5F4;-fx-border-radius: 20px;-fx-border-width: 5px;">
+                                 <children>
+                                    <Label fx:id="todayTemp" layoutX="131.0" layoutY="47.0" prefHeight="32.0" prefWidth="98.0" text="Label" />
+                                    <Label fx:id="tomorrowTemp" layoutX="131.0" layoutY="125.0" prefHeight="35.0" prefWidth="86.0" text="Label" />
+                                    <ImageView fx:id="todayWeatherImg" fitHeight="64.0" fitWidth="64.0" layoutX="228.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" />
+                                    <ImageView fx:id="tomorrowWeatherImg" fitHeight="64.0" fitWidth="64.0" layoutX="229.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label layoutX="28.0" layoutY="51.0" prefHeight="20.0" prefWidth="81.0" text="Today">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="21.0" layoutY="132.0" text="Tomorrow">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="informImg" fitHeight="64.0" fitWidth="64.0" layoutX="217.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/informImg.png" />
+                                       </image></ImageView>
+                                    <Separator layoutX="21.0" layoutY="88.0" prefHeight="0.0" prefWidth="267.0" />
+                                    <Separator layoutX="16.0" layoutY="163.0" prefHeight="0.0" prefWidth="267.0" />
+                                 </children></AnchorPane>
+                                        <Label layoutX="31.0" layoutY="336.0" prefHeight="59.0" prefWidth="246.0" text="Weather Forecast">
+                                            <font>
+                                                <Font name="Calibri Bold" size="25.0" />
+                                            </font>
+                                        </Label>
+                              <AnchorPane fx:id="animationPane" layoutX="3.0" layoutY="14.0" prefHeight="369.0" prefWidth="896.0">
+                                 <children>
+                                    <ImageView fx:id="left_button" fitHeight="66.0" fitWidth="73.0" layoutX="131.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true" />
+                                    <ImageView fx:id="right_button" fitHeight="66.0" fitWidth="73.0" layoutX="261.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label layoutX="43.0" layoutY="240.0" prefHeight="20.0" prefWidth="41.0" />
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="745.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label layoutX="399.0" layoutY="333.0" prefHeight="38.0" prefWidth="256.0" text="Latest Announcement">
+                                       <font>
+                                          <Font name="Calibri Bold" size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXProgressBar layoutX="14.0" layoutY="296.0" prefHeight="6.0" prefWidth="880.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="402.0" layoutY="406.0" prefHeight="283.0" prefWidth="467.0" style="-fx-border-color: #D5E5F4;-fx-border-radius: 20px;-fx-border-width: 5px;">
+                                 <children>
+                                    <GridPane layoutX="52.0" layoutY="20.0" prefHeight="79.0" prefWidth="323.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="157.0" minWidth="10.0" prefWidth="111.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="212.0" minWidth="10.0" prefWidth="212.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="PublishTime:" />
+                                          <Label text="ManagerId:" GridPane.rowIndex="1" />
+                                          <Label fx:id="announceTimeLabel" prefHeight="32.0" prefWidth="227.0" GridPane.columnIndex="1" />
+                                          <Label fx:id="managerIdLabel" prefHeight="33.0" prefWidth="217.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                       </children>
+                                    </GridPane>
+                                    <TextArea fx:id="announceContentText" layoutX="52.0" layoutY="137.0" prefHeight="123.0" prefWidth="314.0" />
+                                    <Label layoutX="51.0" layoutY="105.0" prefHeight="30.0" prefWidth="61.0" text="Deatils:" />
+                                    <ImageView fx:id="announceImgView" fitHeight="100.0" fitWidth="100.0" layoutX="342.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children></AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab fx:id="repairTab" text="repair">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="950.0">
+                           <children>
+                              <AnchorPane layoutX="444.0" layoutY="237.0" prefHeight="465.0" prefWidth="378.0" />
+                              <AnchorPane layoutX="26.0" layoutY="33.0" prefHeight="276.0" prefWidth="860.0" style="-fx-border-color: #D5E5F4;-fx-border-radius: 20px;-fx-border-width: 5px;">
+                                 <children>
+                                    <TableView fx:id="holderRecordTableView" layoutX="368.0" layoutY="60.0" prefHeight="190.0" prefWidth="447.0">
+                                      <columns>
+                                        <TableColumn fx:id="recordTimeColumn" prefWidth="175.0" text="Time" />
+                                        <TableColumn fx:id="recordContentColumn" prefWidth="272.0" text="Content" />
+                                      </columns>
+                                    </TableView>
+                                    <ImageView fx:id="holderRepairmanImg" fitHeight="260.0" fitWidth="260.0" layoutX="65.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label layoutX="368.0" layoutY="11.0" prefHeight="39.0" prefWidth="232.0" text="My RepairRecords">
+                                       <font>
+                                          <Font name="Calibri Bold" size="25.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="28.0" layoutY="337.0" prefHeight="344.0" prefWidth="857.0" style="-fx-border-color: #D5E5F4;-fx-border-radius: 20px;-fx-border-width: 5px;">
+                                 <children>
+                                    <JFXComboBox fx:id="brokenTypeBox" layoutX="155.0" layoutY="33.0" prefHeight="30.0" prefWidth="210.0" />
+                                    <Label layoutX="53.0" layoutY="46.0" text="BrokenType:" />
+                                    <Label layoutX="53.0" layoutY="80.0" text="Details:" />
+                                    <TextArea fx:id="brokenDetailsText" layoutX="53.0" layoutY="118.0" prefHeight="154.0" prefWidth="310.0" />
+                                    <Button layoutX="80.0" layoutY="285.0" mnemonicParsing="false" onAction="#repairApplyCommit" text="Commit" />
+                                    <Button layoutX="260.0" layoutY="285.0" mnemonicParsing="false" onAction="#repairApplyClear" prefHeight="30.0" prefWidth="79.0" text="Clear" />
+                                    <ImageView fx:id="holderRepairmanImg2" fitHeight="244.0" fitWidth="450.0" layoutX="393.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label layoutX="429.0" layoutY="25.0" prefHeight="43.0" prefWidth="187.0" text="Apply for Repair">
+                                       <font>
+                                          <Font name="Calibri Bold" size="25.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children></AnchorPane>
+                            </content>
+                        </Tab>
+                    </tabs>
+                </JFXTabPane>
+            </children></AnchorPane>
+    </children>
+</AnchorPane>

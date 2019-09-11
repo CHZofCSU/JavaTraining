@@ -1,0 +1,14 @@
+/*.table-view {*/
+    /*-fx-border-width: 10px;*/
+    /*!*-fx-border-color: #CACACA;*!*/
+    /*-fx-background-color: #000000;*/
+/*}*/
+/*.table-view .table-column .column-header {*/
+    /*-fx-background-color: #363739;*/
+/*}*/
+.Button:hover{
+    -fx-cursor: hand;
+}
+.JFXButton:hover{
+    -fx-cursor: hand;
+}

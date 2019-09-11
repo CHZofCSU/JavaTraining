@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: #ffffff;" stylesheets="@../main.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManagerStageController">
+   <children>
+      <AnchorPane prefHeight="800.0" prefWidth="187.0" style="-fx-background-color: #252429">
+         <children>
+            <VBox layoutY="193.0" prefHeight="251.0" prefWidth="167.0" spacing="10.0">
+               <children>
+                  <JFXButton onAction="#jumpToHolder" prefHeight="50.0" prefWidth="200.0" ripplerFill="#4059a9" style="-fx-text-fill: white" text="HouseHolder" />
+                  <JFXButton onAction="#jumpToStaff" prefHeight="50.0" prefWidth="200.0" ripplerFill="#4059a9" style="-fx-text-fill: white" text="Staff" />
+                  <JFXButton onAction="#jumpToRepair" prefHeight="50.0" prefWidth="200.0" ripplerFill="#4059a9" style="-fx-text-fill: white" text="RepairRecord" />
+                  <JFXButton onAction="#jumpToAnnounce" prefHeight="50.0" prefWidth="200.0" ripplerFill="#4059a9" style="-fx-text-fill: white" text="Announcement" />
+               </children>
+            </VBox>
+            <ImageView fx:id="managerImgView" fitHeight="100.0" fitWidth="100.0" layoutX="50.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="managerNameLabel" alignment="CENTER" layoutX="45.0" layoutY="143.0" prefHeight="30.0" prefWidth="110.0" text="Label" textFill="WHITE" underline="true" />
+            <ImageView fx:id="tab1Img" fitHeight="32.0" fitWidth="32.0" layoutX="171.0" layoutY="202.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="tab2Img" fitHeight="32.0" fitWidth="32.0" layoutX="171.0" layoutY="263.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="tab3Img" fitHeight="32.0" fitWidth="32.0" layoutX="171.0" layoutY="323.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="tab4Img" fitHeight="32.0" fitWidth="32.0" layoutX="171.0" layoutY="384.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="exitImg" fitHeight="48.0" fitWidth="48.0" layoutX="76.0" layoutY="528.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="200.0" prefHeight="800.0" prefWidth="950.0">
+         <children>
+            <JFXTabPane fx:id="contentTabPane" layoutX="7.0" layoutY="-36.0" prefHeight="750.0" prefWidth="950.0">
+               <tabs>
+                  <Tab fx:id="holderTab" text="HouseHolder">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="750.0" prefWidth="950.0">
+                           <children>
+                              <AnchorPane layoutX="35.0" layoutY="339.0" prefHeight="362.0" prefWidth="830.0" style="-fx-border-color: #D5E5F4;-fx-border-radius: 20px;-fx-border-width: 5px;">
+                                 <children>
+                                    <TableView fx:id="holderTableView" layoutX="28.0" layoutY="73.0" prefHeight="269.0" prefWidth="650.0">
+                                      <columns>
+                                          <TableColumn fx:id="holderIdColumn" prefWidth="51.0" style="-fx-alignment: center;" text="Id" />
+                                          <TableColumn fx:id="holderNameColumn" prefWidth="78.0" style="-fx-alignment: center;" text="Name" />
+                                          <TableColumn fx:id="holderPasswordColumn" prefWidth="143.0" style="-fx-alignment: center;" text="Password" />
+                                          <TableColumn fx:id="houseNumColumn" prefWidth="141.0" style="-fx-alignment: center;" text="HouseNumber" />
+                                          <TableColumn fx:id="houseSquareColumn" prefWidth="137.0" style="-fx-alignment: center;" text="HouseSquare" />
+                                          <TableColumn fx:id="holderGenderColumn" prefWidth="99.0" style="-fx-alignment: center;" text="Gender" />
+                                      </columns>
+                                    </TableView>
+                                    <JFXTextField fx:id="searchHolderText" layoutX="494.0" layoutY="27.0" promptText="Search" />
+                                    <Button layoutX="28.0" layoutY="26.0" mnemonicParsing="false" onAction="#jumpToHolderAdd" text="Add" />
+                                    <ImageView fx:id="holderSearchImgView" fitHeight="32.0" fitWidth="32.0" layoutX="448.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                                 <effect>
+                                    <Blend />
+                                 </effect>
+                              </AnchorPane>
+                              <Label layoutX="41.0" layoutY="286.0" prefHeight="59.0" prefWidth="246.0" text="HouseHolder Message">
+                                 <font>
+                                    <Font name="Calibri Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane layoutX="589.0" layoutY="28.0" prefHeight="270.0" prefWidth="270.0" style="-fx-border-color: #D5E5F4;-fx-border-radius: 20px;-fx-border-width: 5px;">
+                                 <children>
+                                    <PieChart fx:id="pieChartHolder" layoutX="8.0" layoutY="13.0" prefHeight="270.0" prefWidth="270.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="35.0" layoutY="28.0" prefHeight="263.0" prefWidth="505.0" style="-fx-border-color: #D5E5F4;-fx-border-radius: 20px;-fx-border-width: 5px;">
+                                 <children>
+                                    <ImageView fx:id="holderImgView" fitHeight="210.0" fitWidth="210.0" layoutX="24.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label fx:id="holderNameLabel" layoutX="358.0" layoutY="57.0" prefHeight="33.0" prefWidth="130.0" text="Label">
+                                       <font>
+                                          <Font name="Calibri" size="24.0" />
+                                       </font></Label>
+                                    <Label fx:id="holderGenderLabel" layoutX="358.0" layoutY="105.0" prefHeight="33.0" prefWidth="95.0" text="Label">
+                                       <font>
+                                          <Font name="Calibri" size="24.0" />
+                                       </font></Label>
+                                    <Label fx:id="holderNameLabel1" layoutX="253.0" layoutY="57.0" prefHeight="33.0" prefWidth="95.0" text="Name:">
+                                       <font>
+                                          <Font name="Calibri" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="holderNameLabel11" layoutX="253.0" layoutY="105.0" prefHeight="33.0" prefWidth="95.0" text="Gender:">
+                                       <font>
+                                          <Font name="Calibri" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                      </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab fx:id="staffTab" text="Staff">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="950.0">
+                           <children>
+                              <AnchorPane layoutX="35.0" layoutY="339.0" prefHeight="362.0" prefWidth="830.0" style="-fx-border-color: #D5E5F4;-fx-border-radius: 20px;-fx-border-width: 5px;">
+                                 <children>
+                                    <TableView fx:id="staffTableView" layoutX="81.0" layoutY="83.0" prefHeight="251.0" prefWidth="584.0">
+                                      <columns>
+                                        <TableColumn fx:id="staffIdColumn" prefWidth="113.0" style="-fx-alignment: center;" text="Id" />
+                                        <TableColumn fx:id="staffNameColumn" prefWidth="121.0" style="-fx-alignment: center;" text="Name" />
+                                          <TableColumn fx:id="staffPositionColumn" prefWidth="108.0" style="-fx-alignment: center;" text="Position" />
+                                          <TableColumn fx:id="staffGenderColumn" prefWidth="111.0" style="-fx-alignment: center;" text="Gender" />
+                                          <TableColumn fx:id="staffTelephoneColumn" prefWidth="130.0" style="-fx-alignment: center;" text="Telephone" />
+                                      </columns>
+                                    </TableView>
+                                    <Button layoutX="81.0" layoutY="43.0" mnemonicParsing="false" onAction="#jumpToStaffAdd" text="Add" />
+                                    <JFXTextField fx:id="searchStaffText" layoutX="483.0" layoutY="36.0" promptText="Search" />
+                                    <ImageView fx:id="staffSearchImgView" fitHeight="32.0" fitWidth="32.0" layoutX="438.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </AnchorPane>
+                              <Label layoutX="41.0" layoutY="286.0" prefHeight="59.0" prefWidth="246.0" text="Staff Message">
+                                 <font>
+                                    <Font name="Calibri Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane layoutX="589.0" layoutY="28.0" prefHeight="270.0" prefWidth="270.0" style="-fx-border-color: #D5E5F4;-fx-border-radius: 20px;-fx-border-width: 5px;">
+                                 <children>
+                                    <PieChart fx:id="pieChartStaff" layoutX="8.0" layoutY="13.0" prefHeight="270.0" prefWidth="270.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="23.0" layoutY="28.0" prefHeight="251.0" prefWidth="544.0" style="-fx-border-color: #D5E5F4;-fx-border-radius: 20px;-fx-border-width: 5px;">
+                                 <children>
+                                    <BarChart fx:id="barChartStaff" layoutX="50.0" layoutY="14.0" prefHeight="223.0" prefWidth="423.0">
+                                      <xAxis>
+                                        <CategoryAxis fx:id="barChartX" side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis fx:id="barChartY" side="LEFT" />
+                                      </yAxis>
+                                    </BarChart>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                      </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab fx:id="repairTab" text="RepairRecord">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="750.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane layoutX="13.0" layoutY="437.0" prefHeight="265.0" prefWidth="879.0" style="-fx-border-color: #D5E5F4;-fx-border-radius: 20px;-fx-border-width: 5px;">
+                                 <children>
+                                    <TableView fx:id="recordTableView" layoutX="14.0" layoutY="33.0" prefHeight="200.0" prefWidth="628.0">
+                                      <columns>
+                                        <TableColumn fx:id="repairIdColumn" prefWidth="66.0" style="-fx-alignment: center;" text="Id" />
+                                        <TableColumn fx:id="repairTimeColumn" prefWidth="198.0" text="Time" />
+                                        <TableColumn fx:id="repairContentColumn" prefWidth="164.0" text="Content" />
+                                        <TableColumn fx:id="repairHolderIdColumn" prefWidth="92.0" style="-fx-alignment: center;" text="Holder_id" />
+                                        <TableColumn fx:id="repairIsRepairedColumn" prefWidth="107.0" style="-fx-alignment: center;" text="isRepaired" />
+                                      </columns>
+                                    </TableView>
+                                    <TableView fx:id="repairmanTableView" layoutX="664.0" layoutY="33.0" prefHeight="200.0" prefWidth="200.0">
+                                      <columns>
+                                        <TableColumn fx:id="repairmanNameColumn" prefWidth="65.0" style="-fx-alignment: center;" text="Name" />
+                                        <TableColumn fx:id="repairmanTelephoneColumn" prefWidth="133.0" style="-fx-alignment: center;" text="Telephone" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="24.0" layoutY="14.0" prefHeight="353.0" prefWidth="900.0">
+                                 <children>
+                                    <ImageView fx:id="repairmanImgView" fitHeight="350.0" fitWidth="860.0" layoutX="90.0" layoutY="2.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </AnchorPane>
+                              <Label layoutX="33.0" layoutY="379.0" prefHeight="50.0" prefWidth="182.0" text="RepairRecord">
+                                 <font>
+                                    <Font name="Calibri Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab fx:id="announceTab" text="Announcement">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="950.0">
+                           <children>
+                              <TextArea fx:id="announceContentText" layoutX="509.0" layoutY="65.0" prefHeight="251.0" prefWidth="339.0" promptText="Please fiil in your content here." />
+                              <Button layoutX="544.0" layoutY="337.0" mnemonicParsing="false" onAction="#commitAnnounce" text="Commit" />
+                              <Button layoutX="741.0" layoutY="337.0" mnemonicParsing="false" onAction="#clearAnnounce" text="Clear" />
+                              <ImageView fx:id="announceImgView" fitHeight="305.0" fitWidth="443.0" layoutX="39.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" />
+                              <!--<JFXProgressBar layoutX="14.0" layoutY="389.0" opacity="0.82" prefHeight="4.0" prefWidth="892.0" secondaryProgress="0.0" />-->
+                              <AnchorPane layoutX="15.0" layoutY="404.0" prefHeight="291.0" prefWidth="863.0" style="-fx-border-color: #D5E5F4;-fx-border-radius: 20px;-fx-border-width: 5px;">
+                                 <children>
+                                    <TableView fx:id="announceTableView" layoutX="23.0" layoutY="56.0" prefHeight="217.0" prefWidth="418.0">
+                                      <columns>
+                                        <TableColumn fx:id="announceIdColumn" prefWidth="64.0" style="-fx-alignment: center;" text="Id" />
+                                        <TableColumn fx:id="announceTimeColumn" prefWidth="169.0" text="Time" />
+                                          <TableColumn fx:id="announceContentColumn" minWidth="0.0" prefWidth="90.0" text="Content" />
+                                          <TableColumn fx:id="announceManagerIdColumn" prefWidth="94.0" style="-fx-alignment: center;" text="ManagerId" />
+                                      </columns>
+                                    </TableView>
+                                    <TextArea fx:id="showAnnounceText" layoutX="482.0" layoutY="56.0" prefHeight="217.0" prefWidth="334.0" />
+                                    <Label layoutX="484.0" layoutY="8.0" prefHeight="39.0" prefWidth="146.0" text="MoreDetails">
+                                       <font>
+                                          <Font name="Calibri Bold" size="22.0" />
+                                       </font></Label>
+                                    <Label layoutX="27.0" layoutY="13.0" prefHeight="30.0" prefWidth="118.0" text="History">
+                                       <font>
+                                          <Font name="Calibri Bold" size="22.0" />
+                                       </font></Label>
+                                 </children>
+                              </AnchorPane>
+                              <Label layoutX="245.0" layoutY="250.0" prefHeight="73.0" prefWidth="222.0" text="Announcement">
+                                 <font>
+                                    <Font name="Calibri Bold" size="33.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                      </AnchorPane>
+                    </content>
+                  </Tab>
+               </tabs>
+            </JFXTabPane>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>
